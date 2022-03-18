@@ -1,0 +1,15 @@
+package com.VicePro.Repositories;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.VicePro.Models.Question;
+
+@Repository
+public interface QuestionRepo extends CrudRepository<Question, Long>{
+	List<Question> findAll();
+	Question findByid(long id);
+	List<Question> findAllByQuestionContaining(String question);
+}
